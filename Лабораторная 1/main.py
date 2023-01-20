@@ -2,119 +2,126 @@ import doctest
 
 
 # TODO Написать 3 класса с документацией и аннотацией типов
-class ClassName1:
-    def __init__(self, attr1: str, attr2: int):
+class Car:
+    def __init__(self, model: str, number: int):
         """
                 Creation of ClassName1
-                :param attr1: attribute 1
-                :param attr2: attribute 2
+                :param model: car model
+                :param number: car number
 
                 :raise TypeError Wrong type
                 Примеры:
-                >>> cn = ClassName1('ab', 0)
+                >>> car = Car('BMW', 123)
         """
-        if not isinstance(attr1, str):  # проверяем, что прочитанные страницы типа int
-            raise TypeError("attr1 should be of type str")  # вызываем ошибку
-        if not isinstance(attr2, int):  # проверяем, что прочитанные страницы типа int
-            raise TypeError("attr2 should be of type int")  # вызываем ошибку
-        self.attr1 = attr1
-        self.attr2 = attr2  # последняя прочитанная страница
+        if not isinstance(model, str):  # проверяем, что прочитанные страницы типа int
+            raise TypeError("model should be of type str")  # вызываем ошибку
+        if not isinstance(number, int):  # проверяем, что прочитанные страницы типа int
+            raise TypeError("number should be of type int")  # вызываем ошибку
+        self.model = model
+        self.attr2 = number
 
-    def changeAttr1(self, new_attr1: str) -> None:
+    def change_model(self, new_model: str) -> None:
         """
-        Method changes attr1
+        Method changes model
 
-        :param new_attr1: New value of attr1
+        :param new_model: New value of model
         :raise TypeError Wrong type
         """
-        if not isinstance(new_attr1, str):  # проверяем, что прочитанные страницы типа int
-            raise TypeError("New attr1 should be of type str")  # вызываем ошибку
+        if not isinstance(new_model, str):  # проверяем, что прочитанные страницы типа str
+            raise TypeError("New model should be of type str")  # вызываем ошибку
 
         # и только после всех проверок
-        self.attr1 = new_attr1
+        self.model = new_model
 
-    def changeAttr2(self, new_attr2: int) -> None:
+    def change_number(self, new_number: int) -> None:
         """
-        Method changes attr2
+        Method changes number
 
-        :param new_attr2: New value of attr2
+        :param new_number: New value of new_number
         :raise TypeError Wrong type
         """
-        if not isinstance(new_attr2, int):  # проверяем, что прочитанные страницы типа int
+        if not isinstance(new_number, int):  # проверяем, что прочитанные страницы типа int
             raise TypeError("New age should be of type int")  # вызываем ошибку
 
         # и только после всех проверок
-        self.attr2 = new_attr2
+        self.number = new_number
 
 
-class ClassName2:
-    def __init__(self, attr1: float, attr2: int):
+class Plane:
+    def __init__(self, weight: float, capacity: int):
         """
                 Creation of ClassName1
-                :param attr1: attribute 1
-                :param attr2: attribute 2
+                :param capacity: attribute 1
+                :param weight: attribute 2
 
                 :raise TypeError Wrong type
                 Примеры:
-                >>> cn = ClassName2(1.23, 0)
+                >>> plane = Plane(300.0, 5)
         """
-        if not isinstance(attr1, float):  # проверяем, что прочитанные страницы типа int
+        if not isinstance(weight, float):  # проверяем, что прочитанные страницы типа float
             raise TypeError("attr1 should be of type float")  # вызываем ошибку
-        if not isinstance(attr2, int):  # проверяем, что прочитанные страницы типа int
+        if not isinstance(capacity, int):  # проверяем, что прочитанные страницы типа int
             raise TypeError("attr2 should be of type int")  # вызываем ошибку
-        self.attr1 = attr1
-        self.attr2 = attr2  # последняя прочитанная страница
+        self.weight = weight
+        self.capacity = capacity
 
-    def attr1ToString(self) -> str:
+    def add_passenger(self, new_weight) -> None:
         """
-        Method converts attr1 to String
+            Method adds new passenger
 
-        :return attr1 in string format
+            :param new_weight: New weight of passenger
         """
-        return str(self.attr1)
+        self.capacity += 1
+        self.weight += new_weight
+        return
 
-    def attr2ToString(self) -> str:
+    def get_average_weight(self) -> float:
         """
-        Method converts attr2 to String
+        Method shows average passenger weight
 
-        :return attr2 in string format
+        :return average weight in float format
         """
-        return str(self.attr2)
+        if self.capacity == 0:  # проверяем, что прочитанные страницы типа int
+            raise ValueError("capacity should be equal to 0")  # вызываем ошибку
+        average_weight = float(self.weight/self.capacity)
+        return average_weight
 
 
-class ClassName3:
-    def __init__(self, attr1: float, attr2: int):
+class Boat:
+    def __init__(self, kind: str, holder: str):
         """
                 Creation of ClassName1
-                :param attr1: attribute 1
-                :param attr2: attribute 2
+                :param kind: boat type
+                :param holder: boat holder
 
                 :raise TypeError Wrong type
                 Примеры:
-                >>> cn = ClassName3(1.23, 0)
+                >>> boat = Boat("Fishing", "John Smith")
         """
-        if not isinstance(attr1, float):  # проверяем, что прочитанные страницы типа int
-            raise TypeError("attr1 should be of type float")  # вызываем ошибку
-        if not isinstance(attr2, int):  # проверяем, что прочитанные страницы типа int
-            raise TypeError("attr2 should be of type int")  # вызываем ошибку
-        self.attr1 = attr1
-        self.attr2 = attr2  # последняя прочитанная страница
+        if not isinstance(kind, str):  # проверяем, что прочитанные страницы типа str
+            raise TypeError("kind should be of type str")  # вызываем ошибку
+        if not isinstance(holder, str):  # проверяем, что прочитанные страницы типа int
+            raise TypeError("holder should be of type str")  # вызываем ошибку
+        self.kind = kind
+        self.holder = holder  # последняя прочитанная страница
 
-    def getSum(self) -> float:
+    def change_kind(self, new_kind) -> None:
         """
-        Method returns sum of attr1 and attr2
+        Method changes boat kind
 
-        :return sum of attr1 and attr2
+        :param new_kind: New kind of boat
         """
-        return float(self.attr1 + self.attr2)
+        self.kind = new_kind
+        return
 
-    def getDiff(self) -> float:
+    def change_holder(self, new_holder) -> None:
         """
-        Method gets difference between attr1 and attr2
+        Method changes boat holder
 
-        :return difference between attr1 and attr2
+        :param new_holder: New golder of boat
         """
-        return abs(self.attr1 - self.attr2)
+        self.holder = new_holder
+        return
 
 
 if __name__ == "__main__":
